@@ -6,11 +6,11 @@ ___________________________________________________
 
 Programming Project II
 
-REST API
+REST API: 
 The code for the REST API is in the app.py.
 In the templated folder there is home.html which is used by the API.
 
-MONGO DB
+MONGO DB: 
 In fakeCitizens.py you will find the code for inserting fake citizens in the database.
 In makeGeoObjects.py you will find the code for updating the database field location and converting it to a GeoJSON object.
 
