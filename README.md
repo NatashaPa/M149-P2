@@ -8,7 +8,7 @@ Programming Project II
 
 REST API: 
 The code for the REST API is in the app.py.
-In the templated folder there is home.html which is used by the API.
+In the templates folder there is home.html which is used by the API.
 
 MONGO DB: 
 In fakeCitizens.py you will find the code for inserting fake citizens in the database.
