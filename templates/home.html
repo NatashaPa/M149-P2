@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1> Insert a new incident</h1>    
+    <form action="/create_incident" method="post">
+        <h2>Main data</h3>
+
+        <label>Service Request Number</label><br>
+        <input type="text" name="serviceRequestNumber"><br>
+
+        <label>Service Request Type</label><br>
+        <input type="text" name="serviceRequestType"><br>
+
+        <label>Street Address</label><br>
+        <input type="text" name="streetAddress"><br>
+
+        <label>ZIP Code</label><br>
+        <input type="text" name="zipCode"><br>
+
+        <label>X Coordinate</label><br>
+        <input type="text" name="xCoordinate"><br>
+
+        <label>Y Coordinate</label><br>
+        <input type="text" name="yCoordinate"><br>
+
+        <label>Ward</label><br>
+        <input type="text" name="ward"><br>
+
+        <label>Police District</label><br>
+        <input type="text" name="policeDistrict"><br>
+
+        <label>Community Area</label><br>
+        <input type="text" name="communityArea"><br>
+        
+        <label>Latitude</label><br>
+        <input type="text" name="lat"><br>
+
+        <label>Longitude</label><br>
+        <input type="text" name="lon"><br>
+
+        <h2>Extra data (Fill in according to the request type.)</h3>
+
+        <h3>Abandoned Vehicle Complaint (specific information)</h3>
+        <label>License Plate</label><br>
+        <input type="text" name="licensePlate"><br>
+
+        <label>Vehicle Model</label><br>
+        <input type="text" name="vehicleModel"><br>
+
+        <label>Vehicle Color</label><br>
+        <input type="text" name="vehicleColor"><br>
+
+        <label>How Many Days Has The Vehicle Been Reported As Parked?</label><br>
+        <input type="text" name="howManyDays"><br>
+
+
+        <h3>Garbage Cart Black Maintenance/Replacement (specific information)</h3>
+        <label>Number Of Black Carts Delivered</label><br>
+        <input type="text" name="carts"><br>
+
+
+        <h3>Graffiti Removal (specific information)</h3>
+        <label>What Type Of Surface Is The Graffiti On</label><br>
+        <input type="text" name="gsurface"><br>
+
+        <label>Where Is The Graffiti Located</label><br>
+        <input type="text" name="gloc"><br>
+
+
+        <h3>Pothole in Street (specific information)</h3>
+        <label>Number Of Potholes Filled On Block</label><br>
+        <input type="text" name="npotholes"><br>
+
+
+        <h3>Rodent Baiting/Rat Complaint (specific information)</h3>
+        <label>Number Of Premises Baited</label><br>
+        <input type="text" name="prebaited"><br>
+
+        <label>Number Of Premises With Garbage</label><br>
+        <input type="text" name="pregarbage"><br>
+
+        <label>Number Of Premises With Rats</label><br>
+        <input type="text" name="prerats"><br>
+
+
+        <h3>Sanitation Code Violation (specific information)</h3>
+        <label>What Is The Nature Of This Code Violation</label><br>
+        <input type="text" name="codeviol"><br>
+
+
+        <h3>Tree Debris (specific information)</h3>
+        <label>If Yes-Where Is The Debris Located?</label><br>
+        <input type="text" name="debrisloc"><br>
+
+
+        <h3>Tree Trim (specific information)</h3>
+        <label>Location Of Trees</label><br>
+        <input type="text" name="trimloc"><br>
+
+        
+        <h3>SSA (if applicable)</h3>
+        <input type="text" name="ssa"><br>
+
+
+        <h3>Activity (if applicable check box)</h3>
+        <input type="checkbox" name="activity" value = "activity"><br>
+
+        <label>Current Activity</label><br>
+        <input type="text" name="currentActivity"><br>
+
+        <label>Most Recent Action</label><br>
+        <input type="text" name="mostRecentAction"><br>
+
+
+        <h3>Area (if applicable check box)</h3>
+        <input type="checkbox" name="area" value = "area"><br>
+
+        <label>Historical Wards 2003-2015</label><br>
+        <input type="text" name="hwards"><br>
+
+        <label>Zip Codes</label><br>
+        <input type="text" name="zipCodes"><br>
+
+        <label>Community Areas</label><br>
+        <input type="text" name="communityAreas"><br>
+
+        <label>Census Tracts</label><br>
+        <input type="text" name="censusTracts"><br>
+
+        <label>Wards</label><br>
+        <input type="text" name="wards"><br>
+
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <h1>Upvote Request</h1>
+    <form action="/upvote_request" method="post">
+
+        <label>Insert Citizen Id (int)</label><br>
+        <input type="text" name="citizenId"><br>
+
+        <label>Insert Request Id (string)</label><br>
+        <input type="text" name="requestId"><br>
+
+        <input type="submit" value="Upvote">
+        
+    </form>
+
+    <h1>Query 1</h1>
+    <h3>Find the total requests per type that were created within a specified time range and sort them in a descending order.</h3>
+    <form action="/q1" method="post">
+
+        <label>Start Date</label><br>
+        <input type="date" name="startDate"><br>
+
+        <label>End Date</label><br>
+        <input type="date" name="endDate"><br>
+
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 2</h1>
+    <h3>Find the number of total requests per day for a specific request type and time range.</h3>
+    <form action="/q2" method="post">
+
+        <label>Start Date</label><br>
+        <input type="date" name="startDate"><br>
+        
+        <label>End Date</label><br>
+        <input type="date" name="endDate"><br>
+
+        <label>Service Request Type</label><br>
+        <input type="text" name="srType"><br>
+
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 3</h1>
+    <h3>Find the three most common service requests per zipcode for a specific day.</h3>
+    <form action="/q3" method="post">
+
+        <label>Date</label><br>
+        <input type="date" name="startDate"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 4</h1>
+    <h3>Find the three least common wards with regards to a given service request type.</h3>
+    <form action="/q4" method="post">
+
+        <label>Service Request Type</label><br>
+        <input type="text" name="srType"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 5</h1>
+    <h3>Find the average completion time per service request for a specific date range.</h3>
+    <form action="/q5" method="post">
+
+        <label>Start Date</label><br>
+        <input type="date" name="startDate"><br>
+
+        <label>End Date</label><br>
+        <input type="date" name="endDate"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 6</h1>
+    <h3>Find the most common service request in a specified bounding box for a specific day.</h3>
+    <form action="/q6" method="post">
+
+        <label>Center Point Coordinate (Latitude ex.: 41.93702589972641, Longitude ex.: -87.64615132728282):</label><br>
+        <input type="text" name="lat">
+        <input type="text" name="lon"><br>
+
+        <label>Max Distance from Central Point</label><br>
+        <input type="text" name="dis"><br>
+
+        <label>Date</label><br>
+        <input type="date" name="startDate"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 7</h1>
+    <h3>Find the fifty most upvoted service requests for a specific day.</h3>
+    <form action="/q7" method="post">
+
+        <label>Date</label><br>
+        <input type="date" name="startDate"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+
+    <h1>Query 8</h1>
+    <h3>Find the fifty most active citizens, with regard to the total number of upvotes.</h3>
+    <form action="/q8" method="post">
+        <input type="submit" name="submit_button" value="Find Out">                
+    </form>
+    
+
+    <h1>Query 9</h1>
+    <h3>Find the top fifty citizens, with regard to the total number of wards for which they have upvoted an incidents.</h3>
+    <form action="/q9" method="post">
+        <input type="submit" name="submit_button" value="Find Out">                
+    </form>
+
+    <h1>Query 10</h1>
+    <h3>Find all incident ids for which the same telephone number has been used for more than one names.</h3>
+    <form action="/q10" method="post">
+        <input type="submit" name="submit_button" value="Find Out">                
+    </form>
+
+    <h1>Query 11</h1>
+    <h3>Find all the wards in which a given name has casted a vote for an incident taking place in it.</h3>
+    <form action="/q11" method="post">
+
+        <label>Name (ex.: Kayla Young)</label><br>
+        <input type="text" name="name"><br>
+        
+        <input type="submit" value="Find Out">
+        
+    </form>
+    
+    
+</body>
+</html>
