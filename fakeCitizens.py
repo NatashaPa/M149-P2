@@ -34,8 +34,3 @@ for i in range(6000):
 
 # create the citizen collection and insert the citizen profiles
 db.citizens.insert_many(citizen_profiles)
-
-# # create index on citizen_id to access faster when referencing from request collection
-# db.citizens.create_index([('citizen_id', pymongo.ASCENDING)], sparse=True)
-
-print(citizen_profiles[23])
